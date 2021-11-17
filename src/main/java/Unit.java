@@ -8,6 +8,7 @@ public abstract class Unit {
     public Unit(String unitName, double value){
         this.unitName = unitName;
         this.value = value;
+        this.unitID = UUID.randomUUID();
     }
 
     public String getName(){
