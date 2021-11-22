@@ -9,6 +9,7 @@ public class Building {
     public Building(String name){
         this.name = name;
         this.id = UUID.randomUUID();
+        this.units = new ArrayList<Unit>();
     }
 
     public String getName() {
@@ -40,11 +41,13 @@ public class Building {
     }
 
     public void removeUnit(UUID id){
-        for (Unit unit: units) {
+        units.removeIf(unit -> unit.getID().equals(id));
+
+        /*for (Unit unit: units) {
             if (unit.getID() == id){
                 units.remove(unit);
             }
-        }
+        }*/
     }
 
     public ArrayList<Unit> getAllUnits(){
@@ -57,7 +60,7 @@ public class Building {
         for (Unit unit: units) {
             if (type == "Temp_Sensor" && unit instanceof Temp_Sensor){
                 typelist.add(unit);
-            } else if(type == "C02_Sensor" && unit instanceof CO2_Sensor){
+            } else if(type == "CO2_Sensor" && unit instanceof CO2_Sensor){
                 typelist.add(unit);
             } else if(type == "Actuator" && unit instanceof Actuator){
                 typelist.add(unit);

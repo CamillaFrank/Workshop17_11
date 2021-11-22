@@ -13,11 +13,14 @@ public class BuildingSystem {
         buildings.add(newBuilding);
     }
     public void removeBuilding(UUID id){
-        for (Building building: buildings){
+        buildings.removeIf(building -> building.getId().equals(id));
+
+        /*for (Building building: buildings){
             if (building.getId() == id){
                 buildings.remove(building);
             }
         }
+         */
     }
     public ArrayList<Building> getBuildings(){
         return buildings;
