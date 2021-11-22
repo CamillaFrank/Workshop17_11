@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class BuildingSystem {
+public class BuildingSystem implements IBuildingManagementSystem {
     private ArrayList<Building> buildings;
 
     public BuildingSystem(){
@@ -22,6 +22,7 @@ public class BuildingSystem {
         }
          */
     }
+    @Override
     public ArrayList<Building> getBuildings(){ return buildings;
     }
 }
