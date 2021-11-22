@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.UUID;
 
 public class BuildingSystem implements IBuildingManagementSystem {
@@ -12,6 +13,7 @@ public class BuildingSystem implements IBuildingManagementSystem {
         Building newBuilding = new Building(name);
         buildings.add(newBuilding);
     }
+
     public void removeBuilding(UUID id){
         buildings.removeIf(building -> building.getId().equals(id));
 
@@ -22,8 +24,14 @@ public class BuildingSystem implements IBuildingManagementSystem {
         }
          */
     }
-    public void getBuilding(UUID id){
-        buildings.forEach(building -> building.getId().equals(id));
+
+    public Building getBuilding(UUID id){
+        for (Building b : buildings) {
+            if(b.getId() == id){
+                return b;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -31,9 +39,8 @@ public class BuildingSystem implements IBuildingManagementSystem {
     }
 
     @Override
-    public ArrayList<Unit> getAllType(String type, UUID buildingId){
-        ArrayList<Unit> typeList = new ArrayList<Unit>();
-        typeList = Building.getAllType(type);
-        return typeList;
+    public ArrayList<Unit> getAllType(String type, UUID buildingId) {
+        Building result = this.getBuilding(buildingId);
+        return result.bgetAllType(type);
     }
 }

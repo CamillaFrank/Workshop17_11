@@ -16,10 +16,9 @@ public class Main {
         U45.addCO2Sensor("Sensor2", 5.0);
 
         System.out.println(U48.getAllUnits());
-        System.out.println(U48.getAllType("CO2_Sensor"));
-        System.out.println(U45.getAllType("CO2_Sensor"));
 
         System.out.println(U45.getId());
+        System.out.println(buildingSystem.getBuilding(U45.getId()));
 
         U48.removeUnit(U48.getAllUnits().get(0).getID());
         System.out.println(U48.getAllUnits());

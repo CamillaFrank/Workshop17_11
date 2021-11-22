@@ -54,7 +54,7 @@ public class Building {
         return units;
     }
 
-    public ArrayList<Unit> getAllType(String type){
+    public ArrayList<Unit> bgetAllType(String type){
         ArrayList<Unit> typelist = new ArrayList<Unit>();
         
         for (Unit unit: units) {

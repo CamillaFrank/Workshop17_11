@@ -25,4 +25,5 @@ public interface IBuildingManagementSystem {
 
     public void removeUnit(UUID id);
 
+    ArrayList<Unit> getAllType(String type, UUID buildingId);
 }
