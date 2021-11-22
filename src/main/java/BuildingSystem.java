@@ -22,7 +22,18 @@ public class BuildingSystem implements IBuildingManagementSystem {
         }
          */
     }
+    public void getBuilding(UUID id){
+        buildings.forEach(building -> building.getId().equals(id));
+    }
+
     @Override
     public ArrayList<Building> getBuildings(){ return buildings;
+    }
+
+    @Override
+    public ArrayList<Unit> getAllType(String type, UUID buildingId){
+        ArrayList<Unit> typeList = new ArrayList<Unit>();
+        typeList = Building.getAllType(type);
+        return typeList;
     }
 }

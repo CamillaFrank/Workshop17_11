@@ -25,22 +25,21 @@ public class Building {
         return this.name;
     }
 
-    @Override
     public void addActuator(String unitName, double value){
         Actuator unit = new Actuator(unitName, value);
         units.add(unit);
     }
-    @Override
+
     public void addTempSensor(String unitName, double value){
         Temp_Sensor unit = new Temp_Sensor(unitName, value);
         units.add(unit);
     }
-    @Override
+
     public void addCO2Sensor(String unitName, double value){
         CO2_Sensor unit = new CO2_Sensor(unitName, value);
         units.add(unit);
     }
-    @Override
+
     public void removeUnit(UUID id){
         units.removeIf(unit -> unit.getID().equals(id));
 
@@ -54,7 +53,7 @@ public class Building {
     public ArrayList<Unit> getAllUnits(){
         return units;
     }
-    @Override
+
     public ArrayList<Unit> getAllType(String type){
         ArrayList<Unit> typelist = new ArrayList<Unit>();
         
