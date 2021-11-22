@@ -22,7 +22,6 @@ public class BuildingSystem {
         }
          */
     }
-    public ArrayList<Building> getBuildings(){
-        return buildings;
+    public ArrayList<Building> getBuildings(){ return buildings;
     }
 }
