@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class Buidling {
+public class Building {
     private ArrayList<Unit> units;
     private String name;
     private UUID id;
 
-    public Buidling(String name){
+    public Building(String name){
         this.name = name;
         this.id = UUID.randomUUID();
     }
