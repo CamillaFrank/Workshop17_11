@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class Building implements IBuildingManagementSystem {
+public class Building {
     private ArrayList<Unit> units;
     private String name;
     private UUID id;
