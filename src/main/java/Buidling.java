@@ -18,6 +18,7 @@ public class Buidling {
     public UUID getId() {
         return id;
     }
+
     @Override
     public String toString(){
         return this.name;
@@ -36,5 +37,32 @@ public class Buidling {
     public void addCO2Sensor(String unitName, double value){
         CO2_Sensor unit = new CO2_Sensor(unitName, value);
         units.add(unit);
+    }
+
+    public void removeUnit(UUID id){
+        for (Unit unit: units) {
+            if (unit.getID() == id){
+                units.remove(unit);
+            }
+        }
+    }
+
+    public ArrayList<Unit> getAllUnits(){
+        return units;
+    }
+
+    public ArrayList<Unit> getAllType(String type){
+        ArrayList<Unit> typelist = new ArrayList<Unit>();
+        
+        for (Unit unit: units) {
+            if (type == "Temp_Sensor" && unit instanceof Temp_Sensor){
+                typelist.add(unit);
+            } else if(type == "C02_Sensor" && unit instanceof CO2_Sensor){
+                typelist.add(unit);
+            } else if(type == "Actuator" && unit instanceof Actuator){
+                typelist.add(unit);
+            }
+        }
+        return typelist;
     }
 }
