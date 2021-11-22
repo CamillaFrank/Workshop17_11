@@ -1,8 +1,12 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class System {
+public class BuildingSystem {
     private ArrayList<Building> buildings;
+
+    public BuildingSystem(){
+        this.buildings = new ArrayList<Building>();
+    }
 
     public void addBuilding(String name){
         Building newBuilding = new Building(name);
